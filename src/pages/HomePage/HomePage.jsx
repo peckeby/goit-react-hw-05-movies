@@ -43,7 +43,6 @@ const HomePage = () => {
       {movies.length > 0 && (
         <>
           <MovieGallery>
-            {isLoading && <Loader />}
             {movies.map(movie => (
               <MovieItem key={movie.id}>
                 <MovieLink to={`/movies/${movie.id}`}>
@@ -61,6 +60,7 @@ const HomePage = () => {
           <PageLoadButton type="button" onClick={pageChange}>
             More movies
           </PageLoadButton>
+          {isLoading && <Loader />}
         </>
       )}
     </>
